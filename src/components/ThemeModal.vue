@@ -3,7 +3,7 @@
     <div>
 
         <label :for="theme['title']" class="cursor-pointer text-center text-3xl font-medium">
-            <img class="theme-img my-4" :src="theme['cover']" alt="">
+            <img v-lazy="theme['cover']" class="theme-img my-4" alt="">
             <div>{{ t(theme['title']) }}</div>
         </label>
         <!-- Put this part before </body> tag -->
@@ -13,7 +13,7 @@
                 <h3 class="text-4xl font-bold">{{ t(theme['title']) }}</h3>
                 <p class="py-4 text-xl">{{ t(theme['content']) }}</p>
                 <div v-for="image in theme['images']" :key="image" class="my-10 ">
-                    <img class="rounded-3xl content-img" :src="image" alt="">
+                    <img v-lazy="image" class="rounded-3xl content-img" alt="">
                 </div>
             </label>
         </label>

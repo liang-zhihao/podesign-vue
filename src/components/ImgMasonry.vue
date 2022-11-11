@@ -3,7 +3,7 @@
     <div id="imgs" v-masonry class="w-10/12 cursor-pointer " item-selector=".item" :style="'width:1540px'"
         columnWidth="300px" gutter="10">
         <!-- item -->
-        <img v-for="i in images" :key="i['src']" v-masonry-tile class="object-cover item" :src="i['src']"
+        <img v-for="i in images" :key="i['src']" v-masonry-tile v-lazy="i['src']" class="object-cover item" 
             :style="i['style']" alt="" srcset="">
         <!-- END item -->
     </div>

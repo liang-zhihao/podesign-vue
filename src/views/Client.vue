@@ -1,12 +1,12 @@
 <template>
     <div class="">
-        <img src="/src/assets/images/client/客户页主banner.png" class="w-screen" alt="" srcset="">
+        <img v-lazy="'/src/assets/images/client/客户页主banner.png'" class="w-screen" alt="" srcset="">
         <div class="flex flex-col items-center">
             <div class=" text-3xl my-8 sm:font-bold sm:text-6xl sm:my-16">{{ t('partner.title') }}</div>
             <div class=" mb-16 sm:mb-32 sm:text-5xl font-thin">{{ t('partner.content') }}</div>
         </div>
 
-        <img src="/src/assets/images/client/clients.png" class="sm:mb-32" alt="" srcset="">
+        <img v-lazy="'/src/assets/images/client/clients.png'" class="sm:mb-32" alt="" srcset="">
 
     </div>
 </template>

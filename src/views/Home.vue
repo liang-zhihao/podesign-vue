@@ -3,13 +3,13 @@
     <video class="w-screen " :src="getCOSFile('videos/main_banner.mp4')" autoplay loop muted></video>
     <div class="flex flex-col justify-center items-center mt-6  sm:flex-row ">
       <router-link to="/animation">
-        <img class="banner-image" :src="getAssetsFile(i18nMessage.animateSrc)" alt="">
+        <img v-lazy="getAssetsFile(i18nMessage.animateSrc)" class="banner-image" alt="">
       </router-link>
       <router-link to="/product-case">
-        <img class="banner-image my-6 sm:mx-6 sm:my-0  " :src="getAssetsFile(i18nMessage.ecommerceSrc)" alt="">
+        <img v-lazy="getAssetsFile(i18nMessage.ecommerceSrc)" class="banner-image my-6 sm:mx-6 sm:my-0  " alt="">
       </router-link>
       <router-link to="/">
-        <img class="banner-image" :src="getAssetsFile(i18nMessage.photographSrc)" alt="">
+        <img v-lazy="getAssetsFile(i18nMessage.photographSrc)" class="banner-image" alt="">
       </router-link>
 
     </div>

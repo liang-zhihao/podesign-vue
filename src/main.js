@@ -10,9 +10,10 @@ import "animate.css"
 import { VueMasonryPlugin } from 'vue-masonry';
 import 'vue-fullpage.js/dist/style.css'
 import VueFullPage from 'vue-fullpage.js'
-
+import VueLazyLoad from 'vue3-lazyload'
 import i18n from './i18n'
 const app = createApp(App);
+app.use(VueLazyLoad)
 app.use(VueMasonryPlugin)
 app.use(createPinia());
 app.use(router);

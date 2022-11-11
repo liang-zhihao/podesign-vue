@@ -1,7 +1,7 @@
 <template>
     <div class="  ">
         <!-- main banner -->
-        <img src="/src/assets/images/e-commerce/product-case/主banner.png" class="w-screen cover-img" alt="" srcset="">
+        <img v-lazy="'/src/assets/images/e-commerce/product-case/主banner.png'" class="w-screen cover-img" alt="" srcset="">
         <!-- secondary nav -->
         <SecondaryBar />
         <!-- Hero -->
