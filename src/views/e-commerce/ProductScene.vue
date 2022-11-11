@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <!-- main banner -->
-        <img v-lazy="'/src/assets/images/e-commerce/product-scene/咖啡机.png'" class="w-screen cover-img" alt="" srcset="">
+        <img v-lazy="getAssetsFile('images/e-commerce/product-scene/咖啡机.png')" class="w-screen cover-img" alt="" srcset="">
         <!-- secondary nav -->
         <SecondaryBar />
         <!-- hero -->
@@ -58,6 +58,8 @@ const i18nMessage = computed(() => ({
 
 }))
 const buildImgStr = pubUse.buildImgStr
+const getAssetsFile = pubUse.getAssetsFile
+
 // src width height
 // NOTE 排列顺序是先根据y轴，然后从左到右
 

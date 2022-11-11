@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <!-- main banner -->
-        <img v-lazy="'/src/assets/images/e-commerce/product-plan/主banner.png'" class="w-screen cover-img" alt="" srcset="">
+        <img v-lazy="getAssetsFile('images/e-commerce/product-plan/主banner.png')" class="w-screen cover-img" alt="" srcset="">
         <!-- secondary nav -->
         <SecondaryBar />
 
@@ -42,6 +42,8 @@ const i18nMessage = computed(() => ({
 // src width height
 // NOTE 排列顺序是先根据y轴，然后从左到右
 const buildImgStr = pubUse.buildImgStr
+const getAssetsFile = pubUse.getAssetsFile
+
 const prefix = "images/e-commerce/product-plan/"
 const images = reactive([
     buildImgStr(prefix + "黄色森林.png", "296px", "296px"),

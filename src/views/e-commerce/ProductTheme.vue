@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <!-- main banner -->
-        <img v-lazy="'/src/assets/images/e-commerce/product-theme/主banner.jpg'" class="w-screen cover-img" alt="" srcset="">
+        <img v-lazy="getAssetsFile('images/e-commerce/product-theme/主banner.jpg')" class="w-screen cover-img" alt="" srcset="">
         <!-- secondary nav -->
         <SecondaryBar />
 
