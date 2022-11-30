@@ -1,7 +1,8 @@
 /*此字体：Noto Sans SC，大小：100, 300, 400, 500, 700, 900 这几种样式.
  font-weight: 后面必须加入对应100.300等数字，否则是不生效的.
  （通常 font-weight: bold 我用的是 700字体，这个看大家自己需求了，可以自己更改数字）*/
-#app {
+ @import url('./base.css');
+ #app {
     font-family: Noto Sans SC;
     font-style: normal;
     font-weight: 400;

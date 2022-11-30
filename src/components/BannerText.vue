@@ -1,10 +1,10 @@
 <template>
 
     <div class="flex-col justify-center text-center my-12">
-        <div class="text-weight-700 text-6xl my-6">
+        <div class=" my-title-text   my-6">
             {{ title }}
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center my-body-text ">
             <div class="w-1/2"> {{ content }}</div>
         </div>
     </div>

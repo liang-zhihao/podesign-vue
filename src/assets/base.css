@@ -1,0 +1,12 @@
+.my-title-text{
+    @apply:  font-bold;
+    font-size: 3rem;
+
+  }
+  
+  .my-body-text{
+      color: #757575;
+      @apply text-xl;
+      @apply tracking-wide;
+      @apply leading-8;
+  }

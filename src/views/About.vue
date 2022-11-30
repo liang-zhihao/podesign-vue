@@ -1,11 +1,11 @@
 <template>
-    <div class="">
+    <div class="body-text">
         <img v-lazy="getAssetsFile('images/about/company-introduction.png')" class="w-screen" alt="" srcset="">
         <div class="flex flex-col justify-center items-center w-screen my-16">
-            <p class="indent-8 w-3/4 font-light text-3xl leading-normal ">
+            <p class="indent-8 w-3/4 font-light     body-text  ">
                 {{ t('aboutUs.company.p1') }}
             </p>
-            <p class="indent-8 w-3/4 font-light text-3xl leading-normal">
+            <p class="indent-8 w-3/4 font-light    body-text">
                 {{ t('aboutUs.company.p2') }}
             </p>
         </div>
@@ -13,7 +13,7 @@
 
         <img v-lazy="getAssetsFile('images/about/design-philosphy.png')" class="w-screen" alt="" srcset="">
         <div class="flex flex-col justify-center items-center w-screen my-16">
-            <p class="indent-8 w-3/4 font-light text-3xl leading-normal">
+            <p class="indent-8 w-3/4 font-light     body-text">
                 {{ t('aboutUs.philosophy') }}
             </p>
         </div>
@@ -31,5 +31,10 @@ const getAssetsFile = pubUse.getAssetsFile
 
 </script>
 <style scoped >
-
+.body-text {
+    color: #757575;
+    @apply text-xl;
+    @apply tracking-wide;
+    @apply leading-8;
+}
 </style>

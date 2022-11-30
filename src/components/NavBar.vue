@@ -10,12 +10,12 @@
 
       </div>
       <!-- nav -->
-      <div class="flex text-2xl  text-white font-bold  justify-center items-center w-1/2 ">
-        <router-link to="/" class="block  lg:inline-block lg:mt-0  hover:text-white mx-6">
+      <div class="flex text-2xl    font-light  justify-center items-center w-1/2 ">
+        <router-link to="/" class="block  lg:inline-block lg:mt-0  nav-text mx-6">
           {{ i18nMessage.homepage }}
         </router-link>
         <div class="d-dropdown  d-dropdown-hover mx-6">
-          <label tabindex="0" class=""> {{ i18nMessage.service }}</label>
+          <label tabindex="0" class="nav-text"> {{ i18nMessage.service }}</label>
           <div tabindex="0"
             class="d-dropdown-content d-menu text-xl font-light  p-4 w-40 opacity-80 bg-black relative  -left-5">
             <router-link to="/animation" class="block w-full lg:inline-block   text-white hover:text-white">
@@ -31,17 +31,15 @@
 
         </div>
 
-        <router-link to="/client" class="block  lg:inline-block lg:mt-0 text-white hover:text-white mx-6">
+        <router-link to="/client" class="block  lg:inline-block lg:mt-0 nav-text   mx-6">
           {{ i18nMessage.client }}
-
         </router-link>
-        <router-link to="/about" class="block lg:inline-block lg:mt-0 text-white hover:text-white mx-6">
+        <router-link to="/about" class="block lg:inline-block lg:mt-0 nav-text    mx-6">
           {{ i18nMessage.us }}
 
         </router-link>
-        <router-link to="/contact" class="block  lg:inline-block lg:mt-0 text-white hover:text-white mx-6">
+        <router-link to="/contact" class="block  lg:inline-block lg:mt-0 nav-text    mx-6">
           {{ i18nMessage.contact }}
-
         </router-link>
       </div>
       <div class="d-dropdown ">
@@ -163,5 +161,12 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+.nav-text{
+  color: hsl(0, 0%, 74%);
+  
+}
+.nav-text:hover{
+  color: #f3f3f3;
+  
+}
 </style>

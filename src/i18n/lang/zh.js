@@ -27,9 +27,10 @@ export default {
     home: {
         bannerText: "点密度设计坚持以用户为主，致力于为用户打造具有差异化的创新方案，符合大众审美 通过设计为用户带来更多的商业转化，我们始终致力于成为探索者与创新者。",
         contactNow: "即刻联系",
-        animateSrc: "images/home/animate-zh.png",
-        ecommerceSrc: "images/home/e-commerce-zh.png",
-        photographSrc: "images/home/photograph-zh.png",
+
+        animate:'动画',
+        ecommerce:'电商',
+        photograph:'摄影',
     },
     animation: {
         productAnimationTitle: "产品动画",

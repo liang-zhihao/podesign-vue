@@ -27,9 +27,9 @@ export default {
     home: {
         bannerText: "Podesign insists on focusing on users, and is committed to creating differentiated innovative solutions for users, in line with public aesthetics. Through design, we bring more business transformation to users. We are always committed to becoming an explorer and an innovator.",
         contactNow: "Contact Now",
-        animateSrc: "images/home/animate-en.png",
-        ecommerceSrc: "images/home/e-commerce-en.png",
-        photographSrc: "images/home/photograph-en.png",
+        animate: 'Animate',
+        ecommerce: 'Ecommerce',
+        photograph: 'Photograph',
 
     },
     animation: {

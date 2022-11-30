@@ -2,8 +2,9 @@
     <div class="">
         <img v-lazy="getAssetsFile('images/client/客户页主banner.png')" class="w-screen" alt="" srcset="">
         <div class="flex flex-col items-center">
-            <div class=" text-3xl my-8 sm:font-bold sm:text-6xl sm:my-16">{{ t('partner.title') }}</div>
-            <div class=" mb-16 sm:mb-32 sm:text-5xl font-thin">{{ t('partner.content') }}</div>
+            <div class="   my-8 sm:font-bold sm:text-5xl sm:mt-16  ">{{ t('partner.title') }}</div>
+            <div class="  mb-16 sm:mb-32  my-body-text ">{{ t('partner.content') }}</div>
+            <!-- sm:text-5xl  -->
         </div>
 
         <img v-lazy="getAssetsFile('images/client/clients.png')" class="sm:mb-32" alt="" srcset="">

@@ -6,24 +6,31 @@
                 <div>{{ t('contact.contactUs') }}</div>
             </div>
             <div class="contact-box bg-black w-3/4 ">
-                <form id="form" action="https://api.web3forms.com/submit"  method="POST">
-                    <input type="hidden" name="access_key" value="7707f7f0-b366-4222-b896-357c908246f8">
+                <form id="form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="subject" value="你有新的咨询请求">
+                    <input type="hidden" name="access_key" value="07849b2e-54b0-4a78-ba58-a7c5d43ce93a">
                     <!-- overflow-hidden shadow sm:rounded-md -->
                     <!-- px-28  py-5 sm:p-6 -->
 
                     <div class="grid  grid-cols-12 gap-4 px-28  py-2 sm:p-6 ">
                         <!-- input name -->
-                        <div class="  col-span-6 mt-8 ">
+                        <div class="  col-span-4 mt-8 ">
                             <label for="" class="block text-2xl  text-gray-700  ">
                                 {{ t('contact.fullName') + ":" }}</label>
-                            <input id="name" type="text"  name="name"  autocomplete="given-name"
+                            <input id="name" type="text" name="name" autocomplete="given-name"
                                 class=" mt-1 w-full text-input  rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                         </div>
                         <!-- input phone -->
-                        <div class="col-span-6 mt-8">
+                        <div class="col-span-4 mt-8">
                             <label for="telephone" class="block text-2xl  text-gray-700">{{ t('contact.phone') + ":"
                             }}</label>
-                            <input id="telephone" type="text"  name="telephone"  autocomplete="family-name"
+                            <input id="telephone" type="text" name="telephone" autocomplete="family-name"
+                                class="text-input mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                        </div>
+                        <div class="col-span-4 mt-8">
+                            <label for="email" class="block text-2xl  text-gray-700">{{ t('contact.email') + ":"
+                            }}</label>
+                            <input id="email" type="text" name="email"
                                 class="text-input mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                         </div>
                         <!-- input requirements -->
@@ -31,35 +38,37 @@
                             <label class="text-2xl">{{ t('contact.requirements.label') + ":" }}</label>
                             <div class=" flex items-center radio-group p-4 mt-3">
 
-                                <input type="radio" name="radio-10" class="d-radio  mr-2 bg-white checked:bg-blue-500"
-                                    checked />
+                                <input type="radio" name="requirement-type" :value="t('contact.requirements.ecommerce')"
+                                    class="d-radio  mr-2 bg-white checked:bg-blue-500" checked />
                                 <label for="telephone" class="block text-2xl  text-gray-700 mr-4">{{
                                         t('contact.requirements.ecommerce')
                                 }}</label>
 
-
-                                <input type="radio" name="radio-10" class="d-radio mr-2 bg-white checked:bg-blue-500"
-                                    checked />
+                                <input type="radio" name="requirement-type" :value="t('contact.requirements.keyVision')"
+                                    class="d-radio mr-2 bg-white checked:bg-blue-500" />
                                 <label for="telephone" class="block text-2xl  text-gray-70 mr-4">{{
                                         t('contact.requirements.keyVision')
                                 }}</label>
 
 
-                                <input type="radio" name="radio-10" class="d-radio mr-2 bg-white checked:bg-blue-500"
-                                    checked />
+                                <input type="radio" name="requirement-type"
+                                    :value="t('contact.requirements.productPhotography')"
+                                    class="d-radio mr-2 bg-white checked:bg-blue-500" />
                                 <label for="telephone" class="block text-2xl  text-gray-700 mr-4">{{
                                         t('contact.requirements.productPhotography')
                                 }}</label>
 
 
-                                <input type="radio" name="radio-10"
-                                    class=" text-2x d-radio mr-2 bg-white checked:bg-blue-500" checked />
+                                <input type="radio" name="requirement-type"
+                                    :value="t('contact.requirements.styleDesign')"
+                                    class=" text-2x d-radio mr-2 bg-white checked:bg-blue-500" />
                                 <label for="telephone" class="block text-2xl  text-gray-700 mr-4">{{
                                         t('contact.requirements.styleDesign')
                                 }}</label>
 
-                                <input type="radio" name="radio-10" class="d-radio mr-2 bg-white checked:bg-blue-500"
-                                    checked />
+                                <input type="radio" name="requirement-type"
+                                    :value="t('contact.requirements.artDirector')"
+                                    class="d-radio mr-2 bg-white checked:bg-blue-500" />
                                 <label for="telephone" class="block text-2xl  text-gray-700">{{
                                         t('contact.requirements.artDirector')
                                 }}</label>
@@ -70,14 +79,15 @@
                                 <label for="telephone" class="block text-2xl  text-gray-700">{{
                                         t('contact.textAreaLabel') + ":"
                                 }}</label>
-                                <textarea ref="textarea" class="d-textarea mt-1 w-full text-white " placeholder=""
-                                    @input="resize"></textarea>
+                                <textarea ref="textarea" name="details" class="d-textarea mt-1 w-full text-white "
+                                    placeholder="" @input="resize"></textarea>
                             </div>
                         </div>
                         <div class=" col-end-13 col-span-2 mt-8 ">
-                            <button class="btn btn-primary btn-send text-xl h-8  w-3/4 rounded-2xl text-white   ">{{
-                                    t('contact.send')
-                            }}</button>
+                            <button @click="submit"
+                                class="btn btn-primary btn-send text-xl h-8  w-3/4 rounded-2xl text-white   ">{{
+        t('contact.send')
+                                }}</button>
                         </div>
                     </div>
 
@@ -96,7 +106,7 @@ import { getCurrentInstance, onMounted, } from 'vue';
 import { useI18n } from 'vue-i18n'
 import axios from 'axios'
 const { t, } = useI18n()
-
+// 1137691269@qq.com
 // textarea resize
 let textarea;
 const resize = () => {
@@ -109,6 +119,9 @@ onMounted(() => {
     textarea = currentInstance.ctx.$refs.textarea;
     console.log(textarea.style);
 })
+const submit = () => {
+    alert('Send successfully.')
+}
 </script>
 <style scoped >
 .contact-box {

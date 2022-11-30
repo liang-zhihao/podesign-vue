@@ -2,7 +2,9 @@ const getAssetsFile = (url) => {
     return new URL(`../assets/${url}`, import.meta.url).href
 }
 const getCOSFile = (url) => {
-    return 'https://podesign-main-1314901625.cos.ap-guangzhou.myqcloud.com/' + url
+    // return 'https://podesign-main-1314901625.cos.ap-guangzhou.myqcloud.com/' + url
+    return new URL(`../assets/${url}`, import.meta.url).href
+
 }
 const buildImgStr = (src, width, height) => {
     src = getAssetsFile(src)
